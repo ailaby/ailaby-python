@@ -1,8 +1,8 @@
-# For build automation - Allows building from any ai-dock base image
-ARG IMAGE_BASE="ghcr.io/ai-dock/base-image:cuda-11.8.0-base-22.04"
+# For build automation - Allows building from any ailaby base image
+ARG IMAGE_BASE="ghcr.io/ailaby/ailaby-base:cuda-11.8.0-base-22.04"
 FROM ${IMAGE_BASE}
 
-LABEL org.opencontainers.image.source https://github.com/ai-dock/python
+LABEL org.opencontainers.image.source https://github.com/ailaby/ailaby-python
 
 LABEL org.opencontainers.image.description "Python development environment in a cloud-first docker container"
 
@@ -27,11 +27,11 @@ ENV IMAGE_SLUG="python"
 # Use build scripts to ensure we can build all targets from one Dockerfile in a single layer.
 # Don't put anything heavy in here - We can use multi-stage building above if necessary.
 
-RUN set -eo pipefail && /opt/ai-dock/bin/build/layer0/init.sh | tee /var/log/build.log
+RUN set -eo pipefail && /opt/ailaby/bin/build/layer0/init.sh | tee /var/log/build.log
 
 # Copy overrides and new files into a final layer for fast rebuilds. Uncomment below
 #COPY --chown=0:1111 ./COPY_ROOT_EXTRA/ /
-#RUN set -eo pipefail && /opt/ai-dock/bin/build/layer1/init.sh | tee -a /var/log/build.log
+#RUN set -eo pipefail && /opt/ailaby/bin/build/layer1/init.sh | tee -a /var/log/build.log
 
-# Keep init.sh as-is and place additional logic in /opt/ai-dock/bin/preflight.sh
+# Keep init.sh as-is and place additional logic in /opt/ailaby/bin/preflight.sh
 CMD ["init.sh"]

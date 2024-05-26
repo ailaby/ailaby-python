@@ -1,6 +1,6 @@
 #!/bin/false
 
-source /opt/ai-dock/etc/environment.sh
+source /opt/ailaby/etc/environment.sh
 
 kernel_path=/usr/local/share/jupyter/kernels/
 
@@ -33,9 +33,9 @@ build_common_install_jupyter() {
     micromamba install -n jupyter -y \
         jupyter \
         jupyterlab \
-        nodejs=20 \
+        nodejs=22 \
         python=3.10
-    
+
     # This must remain clean. User software should not be in this environment
     printf "Removing default ipython kernel...\n"
     rm -rf /opt/micromamba/envs/jupyter/share/jupyter/kernels/python3

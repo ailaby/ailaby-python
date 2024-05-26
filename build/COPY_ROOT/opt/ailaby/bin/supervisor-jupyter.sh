@@ -9,7 +9,7 @@ function cleanup() {
 }
 
 function start() {
-    source /opt/ai-dock/etc/environment.sh
+    source /opt/ailaby/etc/environment.sh
 
     LISTEN_PORT=18888
     METRICS_PORT=${JUPYTER_METRICS_PORT:-28888}
@@ -52,7 +52,7 @@ function start() {
     # Delay launch until micromamba is ready
     if [[ -f /run/workspace_sync ]]; then
         printf "Waiting for workspace sync...\n"
-        /usr/bin/python3 /opt/ai-dock/fastapi/logviewer/main.py \
+        /usr/bin/python3 /opt/ailaby/fastapi/logviewer/main.py \
             -p $LISTEN_PORT \
             -r 3 \
             -s "${SERVICE_NAME}" \

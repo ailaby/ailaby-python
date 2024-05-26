@@ -1,17 +1,16 @@
-version: "3.8"
 # Compose file build variables set in .env
 services:
   supervisor:
     build:
       context: ./build
       args:
-        IMAGE_BASE: ${IMAGE_BASE:-ghcr.io/ai-dock/base-image:cuda-11.8.0-base-22.04}
+        IMAGE_BASE: ${IMAGE_BASE:-ghcr.io/ailaby/ailaby-base:cuda-11.8.0-base-22.04}
         PYTHON_VERSION: ${PYTHON_VERSION:-all}
         PYTHON_MAMBA_NAME: ${PYTHON_MAMBA_NAME:-python_310}
       tags:
-        - "ghcr.io/ai-dock/python:${IMAGE_TAG:-all-cuda-11.8.0-base-22.04}"
+        - "ghcr.io/ailaby/ailaby-python:${IMAGE_TAG:-all-cuda-11.8.0-base-22.04}"
         
-    image: ghcr.io/ai-dock/python:${IMAGE_TAG:-all-cuda-11.8.0-base-22.04}
+    image: ghcr.io/ailaby/ailaby-python:${IMAGE_TAG:-all-cuda-11.8.0-base-22.04}
     
     ## For Nvidia GPU's - You probably want to uncomment this
     #deploy:
@@ -22,8 +21,8 @@ services:
     #          count: all
     #          capabilities: [gpu]
     
-    devices:
-      - "/dev/dri:/dev/dri"
+    #devices:
+      #- "/dev/dri:/dev/dri"
       # For AMD GPU
       #- "/dev/kfd:/dev/kfd"
     
@@ -33,7 +32,7 @@ services:
       # Will echo to root-owned authorized_keys file;
       # Avoids changing local file owner
       - ./config/authorized_keys:/root/.ssh/authorized_keys_mount
-      - ./config/provisioning/default.sh:/opt/ai-dock/bin/provisioning.sh
+      - ./config/provisioning/default.sh:/opt/ailaby/bin/provisioning.sh
     
     ports:
         # SSH available on host machine port 2222 to avoid conflict. Change to suit
@@ -68,4 +67,4 @@ services:
         - SYNCTHING_UI_PORT_HOST=${SYNCTHING_UI_PORT_HOST:-8384}
         - SYNCTHING_TRANSPORT_PORT_HOST=${SYNCTHING_TRANSPORT_PORT_HOST:-22999}
         - SYNCTHING_URL=${SYNCTHING_URL:-}
-        #- PROVISIONING_SCRIPT=https://raw.githubusercontent.com/ai-dock/python/main/config/provisioning/default.sh
+        #- PROVISIONING_SCRIPT=https://raw.githubusercontent.com/ailaby/ailaby-python/main/config/provisioning/default.sh

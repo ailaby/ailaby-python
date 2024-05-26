@@ -1,17 +1,17 @@
-[![Docker Build](https://github.com/ai-dock/python/actions/workflows/docker-build.yml/badge.svg)](https://github.com/ai-dock/python/actions/workflows/docker-build.yml)
+[![Docker Build](https://github.com/ailaby/ailaby-python/actions/workflows/docker-build.yml/badge.svg)](https://github.com/ailaby/ailaby-python/actions/workflows/docker-build.yml)
 
-# AI-Dock + Python
+# AILaby + Python
 
-Run python in a cloud-first AI-Dock container. Nothing is added to the installed python environment(s) - You'll have python & pip.
+Run python in a cloud-first AILaby container. Nothing is added to the installed python environment(s) - You'll have python & pip.
 
 This image provides a great starting point for python development when used standalone but its also a solid foundation for extending upon.
 
 
 ## Documentation
 
-All AI-Dock containers share a common base which is designed to make running on cloud services such as [vast.ai](https://link.ai-dock.org/vast.ai) and [runpod.io](https://link.ai-dock.org/template) as straightforward and user friendly as possible.
+All AILaby containers share a common base which is designed to make running on cloud services such as [vast.ai](https://link.ailaby.org/vast.ai) and [runpod.io](https://link.ailaby.org/template) as straightforward and user friendly as possible.
 
-Common features and options are documented in the [base wiki](https://github.com/ai-dock/base-image/wiki) but any additional features unique to this image will be detailed below.
+Common features and options are documented in the [base wiki](https://github.com/ailaby/ailaby-base/wiki) but any additional features unique to this image will be detailed below.
 
 
 ## Version Tags
@@ -37,7 +37,7 @@ ROCm builds are experimental. Please give feedback.
 
 - `:latest-cpu` &rarr; `:all-cpu-22.04`
 
-Browse [here](https://github.com/ai-dock/python/pkgs/container/python) for an image suitable for your target environment.
+Browse [here](https://github.com/ailaby/ailaby-python/pkgs/container/python) for an image suitable for your target environment.
 
 Supported Python versions: `3.12`, `3.11`, `3.10`
 
@@ -48,22 +48,17 @@ Supported Platforms: `NVIDIA CUDA`, `AMD ROCm`, `CPU`
 
 **Vast.​ai**
 
-[python:latest-cuda](https://link.ai-dock.org/template-vast-python) (CUDA)
+[python:latest-cuda](https://link.ailaby.org/template-vast-python) (CUDA)
 
-[python:latest-rocm](https://link.ai-dock.org/template-vast-python-rocm) (ROCm)
+[python:latest-rocm](https://link.ailaby.org/template-vast-python-rocm) (ROCm)
 
 ---
 
 **Runpod.​io**
 
-[python:latest](https://link.ai-dock.org/template-runpod-python)
+[python:latest](https://link.ailaby.org/template-runpod-python)
 
 ---
 
 >[!NOTE]  
->These templates are configured to use the `latest` tag but you are free to change to any of the available Python CUDA tags listed [here](https://github.com/ai-dock/python/pkgs/container/python)
-
----
-
-_The author ([@robballantyne](https://github.com/robballantyne)) may be compensated if you sign up to services linked in this document. Testing multiple variants of GPU images in many different environments is both costly and time-consuming; This along with [sponsorships](https://github.com/sponsors/ai-dock) helps to offset costs and further the development of the project_
-
+>These templates are configured to use the `latest` tag but you are free to change to any of the available Python CUDA tags listed [here](https://github.com/ailaby/ailaby-python/pkgs/container/python)
