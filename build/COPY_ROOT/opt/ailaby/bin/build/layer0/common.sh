@@ -33,7 +33,7 @@ build_common_install_jupyter() {
     micromamba install -n jupyter -y \
         jupyter \
         jupyterlab \
-        nodejs=22 \
+        nodejs=20 \
         python=3.10
 
     # This must remain clean. User software should not be in this environment
