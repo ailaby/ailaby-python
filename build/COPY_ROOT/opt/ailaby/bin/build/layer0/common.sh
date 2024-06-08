@@ -33,6 +33,7 @@ build_common_install_jupyter() {
     micromamba install -n jupyter -y \
         jupyter \
         jupyterlab \
+        jupyterlab-language-pack-zh-CN \
         nodejs=20 \
         python=3.10
 
