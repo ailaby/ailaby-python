@@ -1,8 +1,8 @@
 # For build automation - Allows building from any ailaby base image
-ARG IMAGE_BASE="ghcr.io/ailaby/ailaby-base:cuda-11.8.0-base-22.04"
+ARG IMAGE_BASE="ghcr.io/ailaby/base:cuda-11.8.0-base-22.04"
 FROM ${IMAGE_BASE}
 
-LABEL org.opencontainers.image.source=https://github.com/ailaby/ailaby-python
+LABEL org.opencontainers.image.source=https://github.com/ailaby/python
 
 LABEL org.opencontainers.image.description="Python development environment in a cloud-first docker container"
 

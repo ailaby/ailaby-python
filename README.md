@@ -1,4 +1,4 @@
-[![Docker Build](https://github.com/ailaby/ailaby-python/actions/workflows/docker-build.yml/badge.svg)](https://github.com/ailaby/ailaby-python/actions/workflows/docker-build.yml)
+[![Docker Build](https://github.com/ailaby/python/actions/workflows/docker-build.yml/badge.svg)](https://github.com/ailaby/python/actions/workflows/docker-build.yml)
 
 # AILaby + Python
 
@@ -11,7 +11,7 @@ This image provides a great starting point for python development when used stan
 
 All AILaby containers share a common base which is designed to make running on cloud services such as [vast.ai](https://link.ailaby.org/vast.ai) and [runpod.io](https://link.ailaby.org/template) as straightforward and user friendly as possible.
 
-Common features and options are documented in the [base wiki](https://github.com/ailaby/ailaby-base/wiki) but any additional features unique to this image will be detailed below.
+Common features and options are documented in the [base wiki](https://github.com/ailaby/base/wiki) but any additional features unique to this image will be detailed below.
 
 
 ## Version Tags
@@ -37,7 +37,7 @@ ROCm builds are experimental. Please give feedback.
 
 - `:latest-cpu` &rarr; `:all-cpu-22.04`
 
-Browse [here](https://github.com/ailaby/ailaby-python/pkgs/container/python) for an image suitable for your target environment.
+Browse [here](https://github.com/ailaby/python/pkgs/container/python) for an image suitable for your target environment.
 
 Supported Python versions: `3.12`, `3.11`, `3.10`
 
@@ -61,4 +61,4 @@ Supported Platforms: `NVIDIA CUDA`, `AMD ROCm`, `CPU`
 ---
 
 >[!NOTE]  
->These templates are configured to use the `latest` tag but you are free to change to any of the available Python CUDA tags listed [here](https://github.com/ailaby/ailaby-python/pkgs/container/python)
+>These templates are configured to use the `latest` tag but you are free to change to any of the available Python CUDA tags listed [here](https://github.com/ailaby/python/pkgs/container/python)

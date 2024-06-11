@@ -73,7 +73,7 @@ jobs:
         with:
           context: build
           build-args: |
-            IMAGE_BASE=ghcr.io/ailaby/ailaby-base:cpu-${{ env.UBUNTU_VERSION }}
+            IMAGE_BASE=ghcr.io/ailaby/base:cpu-${{ env.UBUNTU_VERSION }}
             PYTHON_VERSION=${{ matrix.python[0] }}
             PYTHON_MAMBA_NAME=${{ matrix.python[1] }}
           push: true
@@ -149,7 +149,7 @@ jobs:
         with:
           context: build
           build-args: |
-            IMAGE_BASE=ghcr.io/ailaby/ailaby-base:cuda-${{ matrix.cuda }}-${{ matrix.level }}-${{ env.UBUNTU_VERSION }}
+            IMAGE_BASE=ghcr.io/ailaby/base:cuda-${{ matrix.cuda }}-${{ matrix.level }}-${{ env.UBUNTU_VERSION }}
             PYTHON_VERSION=${{ matrix.python[0] }}
             PYTHON_MAMBA_NAME=${{ matrix.python[1] }}
           push: true
@@ -224,7 +224,7 @@ jobs:
         with:
           context: build
           build-args: |
-            IMAGE_BASE=ghcr.io/ailaby/ailaby-base:rocm-${{ matrix.rocm }}-${{ matrix.level }}-${{ env.UBUNTU_VERSION }}
+            IMAGE_BASE=ghcr.io/ailaby/base:rocm-${{ matrix.rocm }}-${{ matrix.level }}-${{ env.UBUNTU_VERSION }}
             PYTHON_VERSION=${{ matrix.python[0] }}
             PYTHON_MAMBA_NAME=${{ matrix.python[1] }}
           push: true
